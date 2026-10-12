@@ -1,5 +1,5 @@
-# Hardwareprofile
+# Hardware profiles
 
-Gerätespezifische Einstellungen erhalten jeweils ein eigenes Unterverzeichnis
-und müssen ausdrücklich ausgewählt werden. Allgemeine Konfiguration darf keine
-fest eingebauten Hardwareannahmen enthalten.
+Each set of device-specific settings must use its own subdirectory and require
+explicit selection. General configuration must not contain hard-coded hardware
+assumptions.

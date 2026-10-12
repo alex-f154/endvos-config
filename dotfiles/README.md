@@ -1,4 +1,4 @@
 # Dotfiles
 
-Hier entstehen später getrennt aktivierbare GNU-Stow-Pakete. Dieser Platzhalter
-enthält noch keine Benutzerkonfiguration.
+This directory will contain GNU Stow packages that can be enabled individually.
+This placeholder does not contain any user configuration yet.

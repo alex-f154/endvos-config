@@ -1,15 +1,14 @@
-# Wiederherstellung
+# Recovery
 
-## Geplanter Ablauf
+## Planned workflow
 
-Langfristig soll eine frische EndeavourOS-Installation mit wenigen
-Terminalbefehlen anhand dieses Repositories wiederhergestellt werden. Geplant
-sind getrennte Schritte für Pakete, Dotfiles, KDE Plasma, Dienste und ein
-optional ausgewähltes Hardwareprofil.
+Eventually, a fresh EndeavourOS installation should be recoverable from this
+repository with only a few terminal commands. The planned workflow separates
+packages, dotfiles, KDE Plasma, services, and an optionally selected hardware
+profile.
 
-## Aktueller Stand
+## Current status
 
-Ein vollständiger Wiederherstellungsablauf ist noch nicht implementiert oder
-getestet. `bootstrap.sh` nimmt derzeit keine Installation und keine produktive
-Systemänderung vor. Diese Datei dokumentiert daher noch keine ausführbare
-Wiederherstellungsanleitung.
+A complete recovery workflow has not been implemented or tested. `bootstrap.sh`
+currently performs no installation or production system changes. This file does
+not yet document an executable recovery procedure.

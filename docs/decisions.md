@@ -1,13 +1,13 @@
-# Architekturentscheidungen
+# Architecture decisions
 
-## Bestätigte Grundlagen
+## Confirmed foundations
 
-- EndeavourOS/Arch Linux ist die Betriebssystembasis.
-- KDE Plasma ist die Desktop-Umgebung.
-- Open-Source-Software wird bevorzugt.
-- Das Projekt erstellt keine eigene ISO oder Distribution.
-- Hardwareabhängige Konfiguration bleibt in expliziten Profilen isoliert.
-- Automatisierung soll langfristig idempotent sein.
+- EndeavourOS/Arch Linux is the operating system foundation.
+- KDE Plasma is the desktop environment.
+- Open-source software is preferred.
+- The project will not create a custom ISO or distribution.
+- Hardware-specific configuration remains isolated in explicit profiles.
+- Automation should be idempotent.
 
-Weitere Entscheidungen werden hier mit Kontext, Entscheidung und Folgen
-dokumentiert, sobald sie bestätigt sind.
+Further decisions will be documented here with their context, decision, and
+consequences after they are confirmed.

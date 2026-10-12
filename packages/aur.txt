@@ -1,1 +1,1 @@
-# AUR-Pakete werden nach Prüfung von Quelle und Lizenz ergänzt.
+# AUR packages will be added after reviewing their source and license.
