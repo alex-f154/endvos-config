@@ -1,4 +1,4 @@
-# Hilfsskripte
+# Helper scripts
 
-Hier entstehen später kleine, nicht interaktive und möglichst idempotente
-Hilfsskripte. Der aktuelle Stand enthält keine ausführbaren Helfer.
+This directory will contain small, non-interactive, and preferably idempotent
+helper scripts. It does not contain any executable helpers yet.

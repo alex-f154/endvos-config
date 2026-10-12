@@ -1,53 +1,50 @@
-# Verbindliche Regeln für Codex-Aufgaben
+# Binding rules for Codex tasks
 
-Diese Regeln gelten für das gesamte Repository.
+These rules apply to the entire repository.
 
-## Projektgrenzen
+## Project boundaries
 
-1. Bevorzuge Open-Source-Software und dokumentiere begründete Ausnahmen.
-2. KDE Plasma und EndeavourOS/Arch Linux bleiben die technische Grundlage.
-3. Erstelle keine eigene ISO und keine eigene Distribution.
-4. Respektiere bereits bestätigte Architekturentscheidungen. Änderungen daran
-   müssen als Entscheidung dokumentiert und vom Benutzer bestätigt werden.
-5. Implementiere nur den ausdrücklich beauftragten Umfang.
+1. Prefer open-source software and document any justified exceptions.
+2. Keep KDE Plasma and EndeavourOS/Arch Linux as the technical foundation.
+3. Do not create a custom ISO or Linux distribution.
+4. Respect approved architecture decisions. Changes to them must be documented
+   as decisions and confirmed by the user.
+5. Implement only the explicitly requested scope.
 
-## Sicherheit und Datenschutz
+## Security and privacy
 
-1. Versioniere niemals Passwörter, Tokens, SSH-Schlüssel, private Schlüssel,
-   Zugangsdaten oder andere Secrets.
-2. Prüfe neue und geänderte Dateien vor Abschluss einer Aufgabe auf mögliche
-   Secrets.
-3. Verlange vor destruktiven Aktionen eine ausdrückliche Bestätigung. Beschreibe
-   dabei Ziel, Auswirkung und Wiederherstellbarkeit.
-4. Führe keine produktiven Systemänderungen aus, wenn sie nicht ausdrücklich
-   Bestandteil eines späteren, bestätigten Auftrags sind.
-5. Nutze keine Befehle, die vorhandene Benutzerdateien ungefragt überschreiben.
+1. Never commit passwords, tokens, SSH keys, private keys, credentials, or any
+   other secrets.
+2. Scan new and changed files for possible secrets before completing a task.
+3. Obtain explicit confirmation before destructive actions. Describe the
+   target, impact, and recovery options when requesting confirmation.
+4. Do not make production system changes unless a later, confirmed task
+   explicitly requires them.
+5. Do not run commands that overwrite existing user files without confirmation.
 
-## Konfiguration und Implementierung
+## Configuration and implementation
 
-1. Halte allgemeine Konfiguration frei von hardwareabhängigen Werten.
-2. Lege gerätespezifische Anpassungen ausschließlich in
-   `hardware/profiles/<profil>/` ab und aktiviere sie nur nach expliziter
-   Auswahl.
-3. Entwickle Installations- und Konfigurationsskripte idempotent: Wiederholte
-   Ausführung muss denselben gewünschten Zustand ergeben.
-4. Bevorzuge deklarative Konfiguration, kleine nachvollziehbare Schritte und
-   prüfbare Vorbedingungen.
-5. Halte Paketlisten nach Quelle getrennt. Vermische Pacman-, AUR- und
-   Flatpak-Pakete nicht.
-6. Trenne GNU-Stow-Pakete in `dotfiles/` so, dass sie gezielt aktiviert werden
-   können.
+1. Keep general configuration free of hardware-specific values.
+2. Store device-specific adjustments only under
+   `hardware/profiles/<profile>/`, and activate them only after explicit
+   selection.
+3. Make installation and configuration scripts idempotent: repeated execution
+   must result in the same desired state.
+4. Prefer declarative configuration, small understandable steps, and verifiable
+   preconditions.
+5. Keep package lists separated by source. Do not mix Pacman, AUR, and Flatpak
+   packages.
+6. Separate GNU Stow packages under `dotfiles/` so they can be enabled
+   individually.
 
-## Dokumentation und Validierung
+## Documentation and validation
 
-1. Beschreibe den tatsächlichen Implementierungsstand wahrheitsgemäß. Roadmap,
-   Entwurf und geplante Funktionen dürfen nicht als umgesetzt erscheinen.
-2. Dokumentiere neue Architekturentscheidungen in `docs/decisions.md`.
-3. Aktualisiere die Wiederherstellungsdokumentation, sobald sich der getestete
-   Ablauf ändert.
-4. Validiere Shell-Skripte mindestens mit `bash -n` und führe passende,
-   nicht-destruktive Prüfungen aus.
-5. Prüfe vor Abschluss `git diff`, `git status` und die geänderten Inhalte auf
-   versehentlich enthaltene Secrets.
-6. Erstelle keine Commits und pushe keine Änderungen ohne ausdrückliche
-   Freigabe des Benutzers.
+1. Describe the actual implementation status accurately. Do not present roadmap
+   items, designs, or planned features as implemented.
+2. Document new architecture decisions in `docs/decisions.md`.
+3. Update the recovery documentation whenever the tested workflow changes.
+4. Validate shell scripts with at least `bash -n` and run appropriate,
+   non-destructive checks.
+5. Before completing a task, review `git diff`, `git status`, and all changed
+   content for accidentally included secrets.
+6. Do not create commits or push changes without explicit user approval.

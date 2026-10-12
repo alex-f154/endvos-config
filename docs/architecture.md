@@ -1,18 +1,18 @@
-# Architektur
+# Architecture
 
-## Zielbild
+## Target design
 
-Das Repository beschreibt den gewünschten Zustand eines persönlichen
-EndeavourOS-Systems mit KDE Plasma. Paketquellen, Benutzerkonfiguration,
-Desktop-Einstellungen, Dienste und Hardwareprofile bleiben klar getrennt.
+This repository describes the desired state of a personal EndeavourOS system
+with KDE Plasma. Package sources, user configuration, desktop settings,
+services, and hardware profiles remain clearly separated.
 
-Der spätere Bootstrap orchestriert diese Bereiche in nachvollziehbaren,
-idempotenten Schritten. Hardwareprofile sind optional und explizit auszuwählen.
-Destruktive Aktionen benötigen eine vorherige Bestätigung.
+The future bootstrap process will orchestrate these areas through understandable,
+idempotent steps. Hardware profiles are optional and require explicit selection.
+Destructive actions require prior confirmation.
 
-## Aktueller Implementierungsstand
+## Current implementation status
 
-Vorhanden sind die Verzeichnisstruktur, leere Paketlisten und ein
-nicht-installierendes Bootstrap-Grundgerüst. Installation, Zustandsabgleich,
-GNU-Stow-Verknüpfungen, KDE-Import, Dienstaktivierung und Hardwareerkennung sind
-noch nicht implementiert.
+The repository currently provides the directory structure, empty package lists,
+and a non-installing bootstrap scaffold. Package installation, state
+reconciliation, GNU Stow links, KDE import, service activation, and hardware
+detection have not been implemented.

@@ -1,63 +1,61 @@
 # endvos-config
 
-Persönliche, reproduzierbare Konfiguration für EndeavourOS/Arch Linux mit KDE
-Plasma. Ziel ist, ein frisch installiertes EndeavourOS mit wenigen
-Terminalbefehlen in einen dokumentierten, möglichst vollständig
-Open-Source-basierten Arbeitszustand zu versetzen.
+A personal, reproducible configuration for EndeavourOS/Arch Linux with KDE
+Plasma. The goal is to restore a freshly installed EndeavourOS system to a
+documented, predominantly open-source working environment with only a few
+terminal commands.
 
-Dieses Repository befindet sich im Aufbau. Die vorhandenen Dateien bilden
-zunächst nur die Struktur ab; sie führen noch keine Installation oder Änderung
-am produktiven System aus.
+This repository is under development. Its current contents provide the initial
+structure only; they do not install software or modify the host system.
 
-## Voraussetzungen
+## Prerequisites
 
-- Eine frische oder bestehende EndeavourOS-Installation auf Arch-Linux-Basis
-- KDE Plasma als Desktop-Umgebung
-- `git` und `bash`
-- Internetzugang zu den später dokumentierten Paketquellen
-- Ein Benutzerkonto mit gezielt einsetzbaren `sudo`-Rechten
+- A fresh or existing Arch-based EndeavourOS installation
+- KDE Plasma as the desktop environment
+- `git` and `bash`
+- Internet access to the package sources documented later
+- A user account with deliberately applied `sudo` privileges
 
-Vor einer späteren Anwendung müssen Paketlisten, Hardwareprofil und geplante
-Systemänderungen geprüft werden. Secrets wie Passwörter, Tokens und SSH-Keys
-gehören niemals in dieses Repository.
+Review package lists, the selected hardware profile, and every proposed system
+change before applying a future configuration. Secrets such as passwords,
+tokens, and SSH keys must never be stored in this repository.
 
-## Struktur
+## Structure
 
-- `bootstrap.sh`: sicherer Einstiegspunkt; installiert derzeit nichts
-- `packages/`: Paketlisten für Pacman, AUR und später Flatpak
-- `dotfiles/`: mit GNU Stow verwaltbare Benutzerkonfigurationen
-- `desktop/kde/`: KDE-Plasma-Konfigurationen
-- `services/`: deklarative systemd-Konfigurationen
-- `hardware/profiles/`: explizit auswählbare, gerätespezifische Anpassungen
-- `scripts/`: kleine Hilfsskripte
-- `docs/`: Architektur, Entscheidungen und Wiederherstellung
+- `bootstrap.sh`: safe entry point; currently installs nothing
+- `packages/`: package lists for Pacman, AUR, and later Flatpak
+- `dotfiles/`: user configuration managed with GNU Stow
+- `desktop/kde/`: KDE Plasma configuration
+- `services/`: declarative systemd configuration
+- `hardware/profiles/`: explicitly selected, device-specific adjustments
+- `scripts/`: small helper scripts
+- `docs/`: architecture, decisions, and recovery documentation
 
-## Aktueller Stand
+## Current status
 
-Aufgabe 001 stellt ausschließlich die Repository-Grundstruktur bereit. Das
-Bootstrap-Skript validiert lediglich grundlegende Voraussetzungen und beschreibt
-die vorgesehenen späteren Schritte. Leere Paketlisten und Platzhalter-
-Dokumentationen sind keine implementierten Installationsfunktionen.
+Task 001 provides the repository structure only. The bootstrap script checks
+basic prerequisites and describes the intended future steps. Empty package
+lists and placeholder documentation do not represent implemented installation
+features.
 
 ## Roadmap
 
-1. Grundstruktur und Sicherheitsregeln festlegen.
-2. Open-Source-Paketbestand erfassen und Paketlisten kuratieren.
-3. Dotfiles mit GNU Stow strukturieren.
-4. KDE-Einstellungen reproduzierbar exportieren und anwenden.
-5. Optionale systemd-Dienste deklarieren.
-6. Hardwareprofile entwerfen und ausdrücklich auswählbar machen.
-7. Idempotenten Bootstrap- und Wiederherstellungsablauf implementieren.
-8. Wiederherstellung auf einer frischen EndeavourOS-Installation testen und
-   dokumentieren.
+1. Establish the repository structure and safety rules.
+2. Inventory open-source packages and curate package lists.
+3. Organize dotfiles with GNU Stow.
+4. Export and apply KDE settings reproducibly.
+5. Declare optional systemd services.
+6. Design hardware profiles that require explicit selection.
+7. Implement an idempotent bootstrap and recovery workflow.
+8. Test and document recovery on a fresh EndeavourOS installation.
 
-## Verwendung
+## Usage
 
-Der aktuelle Bootstrap ist absichtlich nicht installierend:
+The current bootstrap intentionally performs no installation:
 
 ```bash
 ./bootstrap.sh
 ```
 
-Destruktive oder produktive Änderungen dürfen erst in späteren Aufgaben und nur
-nach ausdrücklicher Bestätigung ergänzt oder ausgeführt werden.
+Destructive or production system changes may only be added or run in a future
+task after explicit confirmation.

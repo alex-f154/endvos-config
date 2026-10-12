@@ -1,1 +1,1 @@
-# Offizielle Repository-Pakete werden in einer späteren Aufgabe ergänzt.
+# Official repository packages will be added in a future task.
