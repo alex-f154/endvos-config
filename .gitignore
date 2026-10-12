@@ -1,0 +1,38 @@
+# Secrets and credentials
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+*.kdbx
+credentials*
+secrets*
+id_rsa*
+id_ed25519*
+
+# Local overrides and machine-specific state
+*.local
+local/
+state/
+hardware/active-profile
+
+# Editor and operating-system files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Temporary and generated artifacts
+tmp/
+temp/
+*.tmp
+*.log
+*.bak
+*.orig
+cache/
+build/
+dist/

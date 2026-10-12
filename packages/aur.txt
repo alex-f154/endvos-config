@@ -1,0 +1,1 @@
+# AUR-Pakete werden nach Prüfung von Quelle und Lizenz ergänzt.
