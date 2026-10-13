@@ -12,7 +12,10 @@ Destructive actions require prior confirmation.
 
 ## Current implementation status
 
-The repository currently provides the directory structure, empty package lists,
-and a non-installing bootstrap scaffold. Package installation, state
-reconciliation, GNU Stow links, KDE import, service activation, and hardware
-detection have not been implemented.
+The repository provides the directory structure, empty package lists and a
+non-installing bootstrap scaffold. An optional Windows 11 dark KDE profile
+provides a repeatable panel script, a read-only asset check and manual appearance
+setup guidance. It has not been deployed or visually verified on the target.
+Package installation, general state reconciliation, GNU Stow links, automatic
+KDE appearance import, service activation and hardware detection remain
+unimplemented.

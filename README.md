@@ -5,8 +5,9 @@ Plasma. The goal is to restore a freshly installed EndeavourOS system to a
 documented, predominantly open-source working environment with only a few
 terminal commands.
 
-This repository is under development. Its current contents provide the initial
-structure only; they do not install software or modify the host system.
+This repository is under development. It provides an initial structure and an
+opt-in KDE panel profile. The bootstrap does not install software or modify the
+host system; manually executing the panel script changes desktop configuration.
 
 ## Prerequisites
 
@@ -33,10 +34,12 @@ tokens, and SSH keys must never be stored in this repository.
 
 ## Current status
 
-Task 001 provides the repository structure only. The bootstrap script checks
-basic prerequisites and describes the intended future steps. Empty package
-lists and placeholder documentation do not represent implemented installation
-features.
+The bootstrap script checks basic prerequisites and describes the intended
+future steps. Package lists remain empty. The optional
+[Windows 11 dark desktop profile](desktop/kde/windows11-dark/README.md) includes
+a panel script and read-only asset check for the reported Plasma 6.7.5 target.
+It has not been deployed or visually verified; dependency installation and a
+complete recovery workflow remain unimplemented.
 
 ## Roadmap
 
