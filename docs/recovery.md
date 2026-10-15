@@ -15,6 +15,29 @@ desktop profile installs assets and changes user configuration.
 
 ## Optional desktop profile
 
+The primary [Endvos Dark profile](../desktop/kde/endvos-dark/README.md) saves
+its own private backups under
+`${XDG_STATE_HOME:-~/.local/state}/endvos/endvos-dark/<BACKUP_ID>/`.
+It includes owned color/widget assets, appearance settings, panel configuration,
+global shortcuts and a live layout export. It records which targets were absent.
+After logging out of Plasma, from a text console as the same user, restore with:
+
+```bash
+bash bootstrap.sh --profile endvos-dark --restore BACKUP_ID --apply
+```
+
+This also restores the earlier bottom-panel configuration when the backup was
+created during migration. Installed system packages, caches and external
+KActivities usage/favorites databases are retained. Changes made later within
+the backed-up paths are reverted. Keep the backup. Log back into Plasma after
+restoration. Isolated backup/failure tests pass; real-session recovery is pending.
+
+Use the profile that created the backup. The old and new manifest target lists
+are intentionally distinct. Both profiles share a lock to prevent simultaneous
+configuration changes.
+
+### Earlier Windows 11 profile
+
 The [Windows 11 dark profile](../desktop/kde/windows11-dark/README.md) automatically
 backs up affected configuration and theme/widget paths before replacing them.
 Backups live in `${XDG_STATE_HOME:-~/.local/state}/endvos/windows11-dark/` and

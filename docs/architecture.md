@@ -12,6 +12,12 @@ Destructive actions require prior confirmation.
 
 ## Current implementation status
 
+The primary `endvos-dark` profile implements the first stage of the approved UI
+redesign: a 36px top panel, Windows-style launcher, an expanding window-title/music
+widget and charcoal native KDE colors. Breeze replaces fixed Qt/Plasma styling
+for centralized accent support. An integrated control center and snap-layout
+picker are later stages. These are not included in stage 1.
+
 The bootstrap is non-mutating by default. The optional Windows 11 dark profile
 provides automated asset installation, appearance activation and panel replacement
 with private backups and offline restoration. Theme sources have fixed commits

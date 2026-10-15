@@ -43,3 +43,29 @@ Affected configuration and asset paths are backed up privately before replacemen
 Offline restoration avoids racing the running Plasma shell. System packages
 are not removed during restoration. Tests cover staging, repeatable panel
 application and recovery behavior in isolation; a real VM acceptance test is pending.
+
+## Confirmed Endvos UI redesign and stage 1 (2026-10-15)
+
+The user replaced the Windows 11 clone target with an approved interactive
+design based on supplied screenshots: a narrow top bar, apps at the left,
+status and clock at the right, Windows-style search/pinned/All Apps launcher,
+dark surfaces and a centrally adjustable accent. The active window title always
+takes priority in the middle; playing music appears only with no active window.
+An integrated right-side control center and Windows-style snap-layout selection
+are confirmed later stages. Windows remain freely movable. KDE Plasma remains
+the desktop; the reference screenshots' Hyprland stack is not adopted.
+
+The user authorized stage 1 implementation. `endvos-dark` is the primary profile;
+the legacy `windows11-dark` command is retained to preserve its backup contract.
+Stage 1 uses native Breeze widgets/decoration and a derived Breeze Dark palette
+so KDE's accent propagates, rather than activating fixed Fluent/Kvantum themes.
+Menu 11 remains pinned, and a local MIT-licensed QML widget combines task focus
+and MPRIS metadata. Only real installed applications seed new pins; repeat
+application preserves those pins and existing custom accent colors.
+
+On explicit application, top and bottom panels on the selected runtime monitor
+are replaced after replacement widget instances exist. Other monitors and side
+panels remain. Backups use a distinct profile directory and explicit target list;
+both installers share a mutation lock. There is no automatic VM deployment.
+Native QML compatibility, exact geometry and real-session recovery are pending
+target testing; custom control center and snap picker are not implemented yet.

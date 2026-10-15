@@ -6,7 +6,7 @@ documented, predominantly open-source working environment with only a few
 terminal commands.
 
 This repository is under development. It provides an initial structure and an
-opt-in Windows 11 dark KDE profile. The bootstrap makes no changes by default.
+opt-in Endvos Dark KDE profile. The bootstrap makes no changes by default.
 Explicit profile application installs desktop assets and changes user settings;
 an additional flag permits installation of missing official packages.
 
@@ -36,13 +36,16 @@ tokens, and SSH keys must never be stored in this repository.
 
 ## Current status
 
-The optional [Windows 11 dark desktop profile](desktop/kde/windows11-dark/README.md)
-downloads pinned, checksum-verified sources and installs themes, icons, cursor,
-Kvantum settings, a start menu and a bottom panel. It supports backups and
-restoration. Profile-specific Pacman dependencies are kept under
-`packages/profiles/`; general package lists remain empty. Isolated tests pass;
-deployment, visual output and recovery on the reported Plasma 6.7.5 VM remain
-unverified. A complete system recovery workflow is still unimplemented.
+The primary [Endvos Dark profile](desktop/kde/endvos-dark/README.md) implements
+stage 1 of the user-approved design: a narrow top panel, Windows-style launcher,
+active window title with music fallback, charcoal colors and a central KDE
+accent. It has private backups and offline restoration. A custom control center
+and snap-layout picker are planned, not implemented. The earlier
+[Windows 11 dark profile](desktop/kde/windows11-dark/README.md) remains available
+for its existing setup and recovery. Profile-specific Pacman dependencies are
+under `packages/profiles/`; general package lists remain empty. Isolated tests
+pass; real Plasma deployment, rendering and recovery remain unverified.
+A complete system recovery workflow is still unimplemented.
 
 ## Roadmap
 
@@ -66,16 +69,17 @@ bash bootstrap.sh
 Preview the desktop profile without changes:
 
 ```bash
-bash bootstrap.sh --profile windows11-dark
+bash bootstrap.sh --profile endvos-dark
 ```
 
 Inside Konsole on the EndeavourOS test VM, explicitly apply it:
 
 ```bash
-bash bootstrap.sh --profile windows11-dark --apply --install-packages
+bash bootstrap.sh --profile endvos-dark --apply --install-packages
 ```
 
 This backs up affected files, installs missing dependencies with Pacman when
-needed, activates the appearance and replaces bottom panels on the selected
-screen. Run as the normal desktop user. Log out and back in afterward. See the
-profile documentation for recovery and the scope of changes.
+needed, activates the appearance and replaces top/bottom panels on the selected
+screen with the new top panel. Run as the normal desktop user. Log out and back
+in afterward. Change the accent centrally in KDE's Colors settings. See the
+profile documentation for read-only checks, recovery and the scope of changes.

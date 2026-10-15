@@ -219,13 +219,14 @@ def build_assets(sources, stage):
     return data, config
 
 
-def snapshot(root_map, backup):
+def snapshot(root_map, backup, target_list=None):
+    selected_targets = targets() if target_list is None else target_list
     entries = []
     # Check every target before copying or changing any of them.
-    for root, relative in targets():
+    for root, relative in selected_targets:
         safe_path(root_map[root], relative)
     backup.mkdir(mode=0o700)
-    for index, (root, relative) in enumerate(targets()):
+    for index, (root, relative) in enumerate(selected_targets):
         path = safe_path(root_map[root], relative)
         entry = {"root": root, "relative": relative, "exists": path.exists()}
         if entry["exists"]:
@@ -237,9 +238,9 @@ def snapshot(root_map, backup):
     return manifest
 
 
-def restore(root_map, backup):
+def restore(root_map, backup, target_list=None):
     manifest = json.loads((backup / "manifest.json").read_text())
-    expected = targets()
+    expected = targets() if target_list is None else target_list
     if manifest["roots"] != {key: str(value) for key, value in root_map.items()}:
         raise ValueError("Backup belongs to different XDG directories")
     if [(entry["root"], entry["relative"]) for entry in manifest["entries"]] != expected:
@@ -282,7 +283,7 @@ def evaluate(qdbus, script, sentinel):
     return output
 
 
-def prerequisites(install_packages):
+def prerequisites(install_packages, package_file=None):
     if os.geteuid() == 0:
         raise ValueError("Run as your desktop user, not with sudo")
     os_info = Path("/etc/os-release").read_text()
@@ -294,7 +295,8 @@ def prerequisites(install_packages):
         raise ValueError("This profile currently targets Plasma 6.7.x")
     if not plasma_running() or not os.environ.get("DBUS_SESSION_BUS_ADDRESS"):
         raise ValueError("Run from Konsole inside your logged-in Plasma desktop")
-    packages = [line for line in (REPO / "packages/profiles/windows11-dark.pacman.txt").read_text().splitlines()
+    package_file = package_file or REPO / "packages/profiles/windows11-dark.pacman.txt"
+    packages = [line for line in package_file.read_text().splitlines()
                 if line and not line.startswith("#")]
     missing = [package for package in packages if subprocess.run(
         ["pacman", "-Q", package], stdout=subprocess.DEVNULL,

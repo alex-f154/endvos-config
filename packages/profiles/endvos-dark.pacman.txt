@@ -1,0 +1,9 @@
+# Official Arch packages; no AUR/Flatpak dependencies for stage 1.
+breeze
+breeze-icons
+kdeclarative
+kitemmodels
+kirigami
+kpackage
+plasma5support
+qt6-tools

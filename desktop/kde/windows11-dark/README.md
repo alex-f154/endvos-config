@@ -1,5 +1,9 @@
 # Windows 11 dark desktop profile
 
+This earlier bottom-panel profile is retained for its existing installation and
+backup recovery. New UI work uses [Endvos Dark](../endvos-dark/README.md), based
+on the user's approved top-panel design with central KDE accent colors.
+
 ## Scope and status
 
 The requested visual target is Windows 11 in dark mode, using EndeavourOS and
