@@ -37,6 +37,13 @@ pending. The reported target is Plasma 6.7.5; application requires Plasma 6.7.x,
 Python 3.11+ with the safe tarfile data filter, and a logged-in normal-user
 Plasma session with D-Bus. No GitHub account or Git checkout is required.
 
+The first VM attempt stopped during appearance verification, before panel
+replacement: Plasma represents the default Breeze theme by omitting
+`plasmarc`'s `Theme/name` key. Verification now uses KDE's `default` fallback
+for that key only; explicit other themes still fail. Rerunning the corrected
+installer can continue setup, creating a new backup of the then-current state.
+Keep the first backup if recovery to the state before that attempt is needed.
+
 Menu 11 sources are pinned by commit and SHA-256 in `sources.json`. The local
 title widget is included in this repository under MIT. Official packages are
 listed separately in `packages/profiles/endvos-dark.pacman.txt`; their versions

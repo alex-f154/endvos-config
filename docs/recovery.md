@@ -32,6 +32,11 @@ KActivities usage/favorites databases are retained. Changes made later within
 the backed-up paths are reverted. Keep the backup. Log back into Plasma after
 restoration. Isolated backup/failure tests pass; real-session recovery is pending.
 
+The first VM application stopped at default-theme verification before changing
+the panel. The corrected installer can be rerun and will create a new backup.
+Retain the original failed-attempt backup to recover the pre-attempt appearance;
+the newer backup represents the partially configured state before the retry.
+
 Use the profile that created the backup. The old and new manifest target lists
 are intentionally distinct. Both profiles share a lock to prevent simultaneous
 configuration changes.

@@ -134,10 +134,15 @@ def verify_settings(config):
     expected = SETTINGS + [("kdeglobals", "General", "ColorScheme", "EndvosDark"),
                            ("plasmarc", "Theme", "name", "default")]
     for filename, group, key, value in expected:
+        # Plasma intentionally removes this key when selecting Breeze/default.
+        # Match its readEntry("name", "default") semantics, while still checking
+        # any explicit value and inherited KConfig defaults normally.
+        fallback = ("--default", "default") if (filename, group, key) == ("plasmarc", "Theme", "name") else ()
         actual = common.run("kreadconfig6", "--file", str(config / filename),
-                            "--group", group, "--key", key).strip()
+                            "--group", group, "--key", key, *fallback).strip()
         if actual != value:
-            raise ValueError(f"Setting verification failed: {filename}/{group}/{key}")
+            raise ValueError(f"Setting verification failed: {filename}/{group}/{key}: "
+                             f"expected {value!r}, got {actual!r}")
 
 
 def activate(config, qdbus, accent):

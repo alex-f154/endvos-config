@@ -86,6 +86,31 @@ class EndvosDarkTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "accent color readback"):
                 profile.activate(self.roots["config"], "qdbus6", profile.DEFAULT_ACCENT)
 
+    def test_theme_verification_accepts_missing_default_key_but_rejects_other_themes(self):
+        # Model kreadconfig's absent-key fallback. Plasma's native apply tool
+        # deliberately deletes Theme/name when selecting the default theme.
+        missing = object()
+        for stored in (missing, "default", "Fluent-round-dark", ""):
+            with self.subTest(stored=stored):
+                def read(*args):
+                    filename = Path(args[args.index("--file") + 1]).name
+                    group, key = args[args.index("--group") + 1], args[args.index("--key") + 1]
+                    if filename == "plasmarc":
+                        if stored is missing:
+                            return args[args.index("--default") + 1] if "--default" in args else ""
+                        return stored
+                    self.assertNotIn("--default", args)
+                    if filename == "kdeglobals" and group == "General" and key == "ColorScheme":
+                        return "EndvosDark"
+                    return next(value for file, section, name, value in profile.SETTINGS
+                                if (file, section, name) == (filename, group, key))
+                with patch.object(profile.common, "run", side_effect=read):
+                    if stored is missing or stored == "default":
+                        profile.verify_settings(self.roots["config"])
+                    else:
+                        with self.assertRaisesRegex(ValueError, "plasmarc/Theme/name.*expected.*got"):
+                            profile.verify_settings(self.roots["config"])
+
     def test_widget_repeat_skips_same_version_and_replaces_changed_assets(self):
         source, destination = self.base / "source", self.base / "installed"
         source.mkdir()
