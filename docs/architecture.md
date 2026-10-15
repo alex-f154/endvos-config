@@ -12,10 +12,12 @@ Destructive actions require prior confirmation.
 
 ## Current implementation status
 
-The repository provides the directory structure, empty package lists and a
-non-installing bootstrap scaffold. An optional Windows 11 dark KDE profile
-provides a repeatable panel script, a read-only asset check and manual appearance
-setup guidance. It has not been deployed or visually verified on the target.
-Package installation, general state reconciliation, GNU Stow links, automatic
-KDE appearance import, service activation and hardware detection remain
-unimplemented.
+The bootstrap is non-mutating by default. The optional Windows 11 dark profile
+provides automated asset installation, appearance activation and panel replacement
+with private backups and offline restoration. Theme sources have fixed commits
+and SHA-256 hashes; upstream installers are not executed. Only official packages
+listed for this profile may be installed with an explicit additional flag.
+General package lists remain empty. Isolated installer, restoration and panel
+tests pass; deployment and visual output on the target remain unverified.
+General state reconciliation, GNU Stow links, other desktop profiles, service
+activation, hardware detection and complete system recovery remain unimplemented.

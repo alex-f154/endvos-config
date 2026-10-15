@@ -1,0 +1,17 @@
+{
+  "fluent-kde": {
+    "repository": "vinceliuice/Fluent-kde",
+    "revision": "44794f29c89de994b0179aebabd2f5776c90d236",
+    "sha256": "b30c2f6350fc8f611807fb53eb2c2c1631e477a20df4f9872fa272b49ec211a4"
+  },
+  "fluent-icons": {
+    "repository": "vinceliuice/Fluent-icon-theme",
+    "revision": "c8a244f571ef8fb47812bdc9dbce76546cedce69",
+    "sha256": "07b6b593ab557e07f0a7cdb232cda99214af13fb74ad6ce1e77d666057647767"
+  },
+  "menu11": {
+    "repository": "Eisteed/menu-11-next",
+    "revision": "eda5490e4e0b66c2bf7fe1c9594ab9ba605545c7",
+    "sha256": "139b353015ad3305ab0d92c10fff39aa9357bd4027c94e9476268e97eb0571b6"
+  }
+}

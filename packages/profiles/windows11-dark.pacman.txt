@@ -1,0 +1,9 @@
+# Official Arch packages required in addition to the existing Plasma desktop.
+aurorae
+kdeclarative
+kitemmodels
+kirigami
+kpackage
+kvantum
+plasma5support
+qt6-tools

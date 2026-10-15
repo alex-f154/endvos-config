@@ -36,3 +36,7 @@ temp/
 cache/
 build/
 dist/
+
+# Python bytecode from the profile installer and tests
+__pycache__/
+*.py[cod]
